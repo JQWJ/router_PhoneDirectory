@@ -27,6 +27,7 @@ const SearchUser = (props) => {
     return (
         <Styled.Body>
             <input 
+                className="EditInput"
                 onChange={onSearch}
                 value={infos}
             />

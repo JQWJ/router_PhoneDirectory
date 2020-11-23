@@ -1,6 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
 import moment from 'moment'
 
 const Styled = {
@@ -51,30 +50,73 @@ const Styled = {
     `,
 }
 
-const InfoPage = ({ match }, props ) => {
+const InfoPage = ({ match }, props) => {
 
-    const { isEditing } = props
+    const { onChange } = props
+
+    const [bookInfos, setBookInfos] = useState({
+        isEditing: false,
+        name: '',
+        phoneNumber: ''
+    }
+)
 
     const isDate = moment().format('YYYY-MM-DD HH:mm:ss')
 
+    const handleEditButton = () => {
+        setBookInfos((prevState) => {
+            return {
+                ...prevState,
+                isEditing: !prevState.isEditing
+            }
+        })
+    }
+
     return (
         <Styled.Body>
-            <Link to='/'><button>Home</button></Link>
             <Styled.Container>
                 <Styled.Wrapper>
                     <Styled.Input>
-                        <Styled.Row>
-                            <h2>이름 : {match.params.name}</h2>
-                        </Styled.Row>
-                        <Styled.Row>
-                            <h2>전화번호 : {match.params.phoneNumber}</h2>
-                        </Styled.Row>
-                        {isDate}
+                        {bookInfos.isEditing ? (
+                            <>
+                                <input
+                                    className="InfoEdit"
+                                    type="text"
+                                    name="name"
+                                    value={match.params.name}
+                                    onChange={onChange}
+                                />
+                                <input
+                                    className="InfoEdit"
+                                    type="number"
+                                    name="phoneNumber"
+                                    value={match.params.phoneNumber}
+                                    onChange={onChange}
+                                />
+                            </>
+                        ) : (
+                                <>
+                                    <Styled.Row>
+                                        <h2>이름 : {match.params.name}</h2>
+                                    </Styled.Row>
+                                    <Styled.Row>
+                                        <h2>전화번호 : {match.params.phoneNumber}</h2>
+                                    </Styled.Row>
+                                    <Styled.Row>
+                                        {isDate}
+                                    </Styled.Row>
+                                </>
+                            )}
                         <Styled.But>
-                            <button>
-                                {isEditing ? '저장하기' : '수정하기'}
+                            <button
+                                className="loginBtns"
+                                onClick={handleEditButton}
+                            >
+                                {bookInfos.isEditing ? '저장하기' : '수정하기'}
                             </button>
-                            <button>삭제하기</button>
+                            <button
+                                className="loginBtns"
+                            >삭제하기</button>
                         </Styled.But>
                     </Styled.Input>
                 </Styled.Wrapper>

@@ -23,6 +23,7 @@ const AddUser = (props) => {
     return (
         <Styled.Body>
             <button
+                className="loginBtn"
                 onClick={onClick}
             >추가</button>
         </Styled.Body>

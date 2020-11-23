@@ -50,12 +50,14 @@ const PhoneBookInfo = (props) => {
             {info.isEditing ? (
                 <>
                     <input
+                        className="EditInput"
                         type="text"
                         name="name"
                         value={info.name}
                         onChange={addData}
                     />
                     <input
+                        className="EditInput"
                         type="number"
                         name="phoneNumber"
                         value={info.phoneNumber}
@@ -72,7 +74,8 @@ const PhoneBookInfo = (props) => {
 
             <Styled.Row>
                 <button
-                    onClick={e => {
+                        className="loginBtn"
+                        onClick={e => {
                         e.preventDefault()
                         onClickEditButton(info.id)
                     }}
@@ -80,11 +83,13 @@ const PhoneBookInfo = (props) => {
                     {info.isEditing ? '저장' : '수정'}
                 </button>
                 <button
+                    className="loginBtn"
                     onClick={onRemove}
                 >삭제하기</button>
-                    <button
-                        onClick={onInfo}
-                    >정보관리</button>
+                <button
+                    className="loginBtn"
+                    onClick={onInfo}
+                >정보관리</button>
             </Styled.Row>
 
         </Styled.Body>

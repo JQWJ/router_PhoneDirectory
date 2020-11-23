@@ -1,0 +1,109 @@
+.Input {
+    width: 900px;
+    height: 40px;
+    border-radius: 10px;
+    border: solid 1px black;
+    margin: 20px 0 20px 0; 
+    font-size: 20px;
+}
+
+.submitBtn {
+    width: 900px;
+    height: 40px;
+    border-radius: 5px;
+    border: solid 1px black;
+    background-color: #FF607F;
+    font-size: 20px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.LoginHome {
+    border: solid 1px #000000;
+    background-color: #5E53C7;
+    min-width: 70px;
+    height: 30px;
+    border: solid 1px #ffffff;
+    color: #ffffff;
+}
+
+.HomeBtn {
+    border: solid 1px #000000;
+    background-color: #5E53C7;
+    min-width: 70px;
+    height: 30px;
+    border: solid 1px #ffffff;
+    color: #ffffff;
+}
+
+.homeBtn {
+    min-width: 70px;
+    height: 30px;
+    background-color: #5E53C7;
+    border: solid 1px #ffffff;
+    color: #ffffff;
+}
+
+.loginBtn {
+    min-width: 70px;
+    height: 30px;
+    background-color: #5E53C7;
+    border: solid 1px #ffffff;
+    color: #ffffff;
+}
+
+.logoutBtn {
+    min-width: 70px;
+    height: 30px;
+    background-color: #5E53C7;
+    border: solid 1px #ffffff;
+    color: #ffffff;
+}
+
+.loginBtns {
+    min-width: 70px;
+    height: 30px;
+    background-color: #5E53C7;
+    border: solid 1px #ffffff;
+    color: #ffffff;
+}
+
+.EditInput {
+    margin: 10px 0 10px 0;
+    width: 200px;
+    height: 20px;
+    border-radius: 10px;
+    border: 1px solid #ffffff;
+}
+
+.InfoEdit {
+    margin: 21.5px 0 21.5px 0;
+    width: 300px;
+    height: 35px;
+    font-size: 30px;
+    font-weight: bold;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    background: #6495ED;
+    color: #ffffff;
+}
+
+.back {
+    background-color: #5E53C7;
+    display: flex;
+    flex-direction: row;
+}
+
+.userId {
+    min-width: 68px;
+    max-width: 200px;
+    height: 28px;
+    background-color: #5E53C7;
+    border: solid 1px #ffffff;
+    color: #ffffff;
+    text-align: center;
+    line-height: 27px;
+    padding: 0 8px 0 8px;
+    font-size: 14px;
+}
+

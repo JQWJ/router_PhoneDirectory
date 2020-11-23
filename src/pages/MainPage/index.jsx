@@ -35,7 +35,11 @@ const Styled = {
 	border: 2px solid #ffffff;
 	margin : auto;
   margin-top: 10px;
-	`
+  `,
+  Col: styled.div`
+  display : flex;
+  width : ${props => props.width}%;
+`,
 }
 
 function MainPage({ history }) {
@@ -45,8 +49,8 @@ function MainPage({ history }) {
   const [phoneBookInfos, setPhoneBookInfos] = useState([
     {
       id: 0,
-      name: '',
-      phoneNumber: '',
+      name: '장정재',
+      phoneNumber: '01030800514',
       isEditing: false,
       isDate: moment().format('YYYY-MM-DD HH:mm:ss'),
     },
@@ -70,7 +74,7 @@ function MainPage({ history }) {
     setPhoneBookInfos((prevState) => {
       return prevState.map((res) => {
         if (id === res.id) {
-          if(res.isEditing === false) {
+          if (res.isEditing === false) {
             // window.location.href = '/info/안녕/하세요'
             history.push(`/info/${res.name}/${res.phoneNumber}`)
           }
@@ -131,6 +135,15 @@ function MainPage({ history }) {
       })
     })
   }
+
+  // const handleLoginButton = (e) => {
+  //     history.push('/login')
+  // }
+
+  // const handleLogoutButton = () => {
+  //   localStorage.clear()
+  //   window.location.reload()
+  // } 
 
   return (
     <Styled.Body>
